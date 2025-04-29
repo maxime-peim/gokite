@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/hashicorp/go-multierror"
-	replycodes "github.com/maxime-peim/gokite/pkg/replycodes/generated"
+	replycodes "github.com/maxime-peim/gokite/pkg/bird/replycodes/generated"
 	"github.com/pkg/errors"
 )
 
