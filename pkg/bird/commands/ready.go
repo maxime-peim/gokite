@@ -6,7 +6,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-var readyPattern = regexp.MustCompile(`BIRD ([\d\.]+) ready.`)
+var readyPattern = regexp.MustCompile(`BIRD ([\d\.\-a-z]+) ready.`)
 
 type ReadyReply struct {
 	Version string
