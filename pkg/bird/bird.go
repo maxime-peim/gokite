@@ -120,7 +120,7 @@ func (b *BirdInstance) SendCommand(cmd commands.Command) (commands.CommandReply,
 	}
 	reply := cmd.NewReply()
 	if err := reply.Parse(rawReply.String()); err != nil {
-		return nil, errors.Wrap(err, "failed to parse command reply")
+		return nil, errors.Wrapf(err, "failed to parse command reply: %s", rawReply.String())
 	}
 	return reply, nil
 }
