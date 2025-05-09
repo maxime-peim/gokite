@@ -17,8 +17,8 @@ type BirdKite struct {
 	bird Bird
 }
 
-func NewBirdKite(socketPath string) (*BirdKite, error) {
-	bird := bird.NewBirdInstance(socketPath)
+func NewBirdKite(socketPath string, optFns ...bird.BirdOption) (*BirdKite, error) {
+	bird := bird.NewBirdInstance(socketPath, optFns...)
 	if err := bird.Connect(); err != nil {
 		return nil, err
 	}
