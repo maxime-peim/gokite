@@ -21,7 +21,7 @@ type (
 func (c *ConfigureCommand) String() string {
 	cmdStr := CommandString{"configure"}
 	cmdStr = cmdStr.AppendIf(c.Soft, "soft")
-	cmdStr = cmdStr.AppendIf(c.File != "", c.File)
+	cmdStr = cmdStr.AppendIf(c.File != "", quote(c.File))
 	cmdStr = cmdStr.AppendValueIf(c.Timeout != 0, "timeout", c.Timeout)
 	return cmdStr.String()
 }
@@ -109,7 +109,7 @@ type (
 
 func (c *ConfigureCheckCommand) String() string {
 	cmdStr := CommandString{"configure", "check"}
-	cmdStr = cmdStr.AppendIf(c.File != "", c.File)
+	cmdStr = cmdStr.AppendIf(c.File != "", quote(c.File))
 	return cmdStr.String()
 }
 

@@ -53,3 +53,7 @@ func (c CommandString) AppendValueIf(condition bool, name string, value any) Com
 	}
 	return c
 }
+
+func quote(s string) string {
+	return fmt.Sprintf("\"%s\"", s)
+}
