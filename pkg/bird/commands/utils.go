@@ -57,3 +57,10 @@ func (c CommandString) AppendValueIf(condition bool, name string, value any) Com
 func quote(s string) string {
 	return fmt.Sprintf("\"%s\"", s)
 }
+
+func ternaryValue[T any](condition bool, trueValue, falseValue T) T {
+	if condition {
+		return trueValue
+	}
+	return falseValue
+}
